@@ -1,4 +1,25 @@
 .main {
   height: 500px;
   background: rgb(1, 53, 110);
+  background: url(../../img/home.jpg) no-repeat top center;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.content {
+  display: inline-block;
+  width: 65%;
+  padding: 100px 15px 0px 0px;
+
+  outline: 1px solid red;
+}
+
+.sidebar {
+  display: inline-block;
+  width: 35%;
+  padding: 0 0 0 15px;
+
+  outline: 1px solid red;
 }

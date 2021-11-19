@@ -17,9 +17,6 @@ const Days = () => {
           <a href="#">Tomorrow</a>
         </li>
         <li>
-          <a href="#">Tomorrow</a>
-        </li>
-        <li>
           <a href="#">Week</a>
         </li>
         <li>

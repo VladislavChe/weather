@@ -1,0 +1,50 @@
+.сard {
+  /* outline: 1px solid yellow; */
+
+  background: rgba(0, 15, 26, 0.54);
+  padding: 30px 40px 38px 50px;
+  border-radius: 20px;
+}
+
+.сity {
+  text-align: left;
+  font-weight: bold;
+  text-transform: none;
+  font-size: 45px;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+}
+
+.degrees {
+  width: 30%;
+  text-align: left;
+  font-size: 66px;
+}
+
+.degrees span {
+  font-weight: bold;
+}
+
+.info {
+  text-align: left;
+  width: 70%;
+}
+
+.street {
+  font-size: 45px;
+}
+
+.wet {
+  font-size: 36px;
+}
+
+.wind {
+  font-size: 25px;
+}
+
+.pressure {
+  font-size: 36px;
+}

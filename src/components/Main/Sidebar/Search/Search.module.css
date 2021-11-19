@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 20px;
+  background: #fff;
+  height: 49px;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.input {
+  text-align: left;
+  padding: 5px 0 5px 24px;
+  border: none;
+  width: 80%;
+  cursor: text;
+}
+
+.img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
