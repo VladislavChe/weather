@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
+import Days from './Days/Days';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
       <div className="container">
         <div className={styles.wrapper}>
           <Logo />
-          Header
+          <Days />
         </div>
       </div>
     </header>

@@ -1,4 +1,7 @@
-.header {
-  height: 77px;
-  background: rgb(50, 50, 50);
+.logo {
+  font-size: 28px;
+}
+
+.logo span {
+  color: var(--main-color);
 }

@@ -2,7 +2,11 @@ import React from 'react';
 import styles from './Logo.module.css';
 
 const Logo = () => {
-  return <div className={styles.logo}>weather forecast</div>;
+  return (
+    <a href="#" className={styles.logo}>
+      Weather <span>forecast</span>
+    </a>
+  );
 };
 
 export default Logo;
