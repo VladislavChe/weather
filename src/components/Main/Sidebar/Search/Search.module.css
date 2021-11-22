@@ -12,7 +12,8 @@
 
 .input {
   text-align: left;
-  padding: 5px 0 5px 24px;
+  padding: 5px 0 5px 0;
+  margin-left: 24px;
   border: none;
   width: 80%;
   cursor: text;
