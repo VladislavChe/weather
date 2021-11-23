@@ -3,14 +3,14 @@ import Search from './Search/Search';
 import Location from './Location/Location';
 import styles from './Sidebar.module.css';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.searchWrapper}>
         <Search />
       </div>
       <div className={styles.locationWrapper}>
-        <Location />
+        <Location cards={props.cards} />
       </div>
     </div>
   );

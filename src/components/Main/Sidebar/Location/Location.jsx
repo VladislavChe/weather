@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './Location.module.css';
+import Tower from './Tower/Tower';
 
-const Location = () => {
+const Location = (props) => {
+  let cardsElements = props.cards.map((card) => {
+    return <Tower tower={card.city} />;
+  });
+
+  console.log(cardsElements);
+
   return (
     <div className={styles.location}>
       <div className={styles.add}>
@@ -16,46 +23,24 @@ const Location = () => {
         </div>
       </div>
       <ul className={styles.list}>
+        {cardsElements}
+
+        {/* <li>
+          <span className={styles.arrow}>></span>
+          <a href="#">New York</a>
+        </li>
         <li>
-          <img
-            className={styles.arrow}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTplIN8Z-vuJrxbqFOxJUNe_CmWjVlaF4B2BQ&usqp=CAU"
-            alt="arrow"
-          />
+          <span className={styles.arrow}>></span>
           <a href="#">Moscow</a>
         </li>
         <li>
-          <img
-            className={styles.arrow}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTplIN8Z-vuJrxbqFOxJUNe_CmWjVlaF4B2BQ&usqp=CAU"
-            alt="arrow"
-          />
-          <a href="#">Kolomna</a>
+          <span className={styles.arrow}>></span>
+          <a href="#">Minsk</a>
         </li>
         <li>
-          <img
-            className={styles.arrow}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTplIN8Z-vuJrxbqFOxJUNe_CmWjVlaF4B2BQ&usqp=CAU"
-            alt="arrow"
-          />
-          <a href="#">Kasimov</a>
-        </li>
-        <li>
-          <img
-            className={styles.arrow}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTplIN8Z-vuJrxbqFOxJUNe_CmWjVlaF4B2BQ&usqp=CAU"
-            alt="arrow"
-          />
-          <a href="#">Ryazani</a>
-        </li>
-        <li>
-          <img
-            className={styles.arrow}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTplIN8Z-vuJrxbqFOxJUNe_CmWjVlaF4B2BQ&usqp=CAU"
-            alt="arrow"
-          />
-          <a href="#">Domodedovo</a>
-        </li>
+          <span className={styles.arrow}>></span>
+          <a href="#">Paris</a>
+        </li> */}
       </ul>
     </div>
   );
