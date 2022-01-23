@@ -11,10 +11,9 @@ let rerendeEntireTree = (state) => {
     <BrowserRouter>
       <App
         state={state}
-        card={store.card}
-        cards={store.state.cards}
-        choosedTower={store.choosedTower}
-        choosedCity={store.state.choosedCity}
+        card={store._state.card}
+        cards={store._state.cards}
+        choosedTower={store.choosedTower.bind(store)}
       />
     </BrowserRouter>,
     document.getElementById('root')

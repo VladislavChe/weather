@@ -3,8 +3,9 @@ import styles from './Location.module.css';
 import Tower from './Tower/Tower';
 
 const Location = (props) => {
+  // debugger;
   let cardsElements = props.cards.map((card) => {
-    return <Tower tower={card.city} choosedTower={props.choosedTower} />;
+    return <Tower card={card} choosedTower={props.choosedTower} />;
   });
 
   return (
