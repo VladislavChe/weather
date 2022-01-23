@@ -9,10 +9,10 @@ const Main = (props) => {
       <div className="container">
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <Card cards={props.cards} />
+            <Card card={props.card} choosedCity={props.choosedCity} />
           </div>
           <div className={styles.sidebar}>
-            <Sidebar cards={props.cards} />
+            <Sidebar cards={props.cards} choosedTower={props.choosedTower} />
           </div>
         </div>
       </div>

@@ -4,10 +4,8 @@ import Tower from './Tower/Tower';
 
 const Location = (props) => {
   let cardsElements = props.cards.map((card) => {
-    return <Tower tower={card.city} />;
+    return <Tower tower={card.city} choosedTower={props.choosedTower} />;
   });
-
-  console.log(cardsElements);
 
   return (
     <div className={styles.location}>
@@ -22,26 +20,7 @@ const Location = (props) => {
           </p>
         </div>
       </div>
-      <ul className={styles.list}>
-        {cardsElements}
-
-        {/* <li>
-          <span className={styles.arrow}>></span>
-          <a href="#">New York</a>
-        </li>
-        <li>
-          <span className={styles.arrow}>></span>
-          <a href="#">Moscow</a>
-        </li>
-        <li>
-          <span className={styles.arrow}>></span>
-          <a href="#">Minsk</a>
-        </li>
-        <li>
-          <span className={styles.arrow}>></span>
-          <a href="#">Paris</a>
-        </li> */}
-      </ul>
+      <ul className={styles.list}>{cardsElements}</ul>
     </div>
   );
 };

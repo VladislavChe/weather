@@ -2,11 +2,14 @@ import React from 'react';
 import styles from './Tower.module.css';
 
 const Tower = (props) => {
-  console.log(props);
+  const clickTower = () => {
+    props.choosedTower(props.tower);
+  };
+
   return (
-    <li>
+    <li onClick={clickTower}>
       <span className={styles.arrow}>></span>
-      <a href="#">{props.tower}</a>
+      <a>{props.tower}</a>
     </li>
   );
 };

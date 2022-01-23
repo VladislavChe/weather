@@ -37,6 +37,27 @@ let store = {
         wind: 8,
       },
     ],
+    choosedCity: 'test2',
+  },
+  card: {
+    degrees: 11,
+    city: '',
+    humidity: 94,
+    wind: 4,
+  },
+  getState() {
+    return store.state;
+  },
+  _callSubscriber() {
+    console.log('State changed');
+  },
+  choosedTower(tower) {
+    store.state.choosedCity = tower;
+    store._callSubscriber(store.state);
+  },
+  subscribe(observer) {
+    store._callSubscriber = observer;
   },
 };
 export default store;
+window.store = store;

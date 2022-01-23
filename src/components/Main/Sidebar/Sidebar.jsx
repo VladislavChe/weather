@@ -10,7 +10,7 @@ const Sidebar = (props) => {
         <Search />
       </div>
       <div className={styles.locationWrapper}>
-        <Location cards={props.cards} />
+        <Location cards={props.cards} choosedTower={props.choosedTower} />
       </div>
     </div>
   );
