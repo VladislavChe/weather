@@ -3,13 +3,14 @@ import styles from './Tower.module.css';
 
 const Tower = (props) => {
   const clickTower = () => {
-    props.choosedTower(
-      props.card.city,
-      props.card.degrees,
-      props.card.street,
-      props.card.humidity,
-      props.card.wind
-    );
+    props.dispatch({
+      type: 'CHOOSED-TOWER',
+      city: props.card.city,
+      degrees: props.card.degrees,
+      street: props.card.street,
+      humidity: props.card.humidity,
+      wind: props.card.wind,
+    });
   };
 
   return (

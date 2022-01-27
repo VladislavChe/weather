@@ -9,12 +9,7 @@ import store from './state';
 let rerendeEntireTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
-      <App
-        state={state}
-        card={store._state.card}
-        cards={store._state.cards}
-        choosedTower={store.choosedTower.bind(store)}
-      />
+      <App state={state} dispatch={store.dispatch.bind(store)} />
     </BrowserRouter>,
     document.getElementById('root')
   );

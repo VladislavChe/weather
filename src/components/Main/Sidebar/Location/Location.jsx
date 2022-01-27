@@ -5,7 +5,7 @@ import Tower from './Tower/Tower';
 const Location = (props) => {
   // debugger;
   let cardsElements = props.cards.map((card) => {
-    return <Tower card={card} choosedTower={props.choosedTower} />;
+    return <Tower card={card} dispatch={props.dispatch} />;
   });
 
   return (

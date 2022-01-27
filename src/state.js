@@ -36,13 +36,13 @@ let store = {
         humidity: 95,
         wind: 5,
       },
-      {
-        city: 'Vena',
-        degrees: 16,
-        street: 'Broken Cluds',
-        humidity: 96,
-        wind: 6,
-      },
+      // {
+      //   city: 'Vena',
+      //   degrees: 16,
+      //   street: 'Broken Cluds',
+      //   humidity: 96,
+      //   wind: 6,
+      // },
     ],
     card: {
       city: 'City',
@@ -52,25 +52,29 @@ let store = {
       wind: 4,
     },
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     console.log('State changed');
   },
-  choosedTower(city, degrees, street, humidity, wind) {
-    let choosedCity2 = {
-      city: city,
-      degrees: degrees,
-      street: street,
-      humidity: humidity,
-      wind: wind,
-    };
-    this._state.card = choosedCity2;
-    this._callSubscriber(this._state);
+
+  getState() {
+    return this._state;
   },
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+
+  dispatch(action) {
+    if (action.type === 'CHOOSED-TOWER') {
+      let choosedCity = {
+        city: action.city,
+        degrees: action.degrees,
+        street: action.street,
+        humidity: action.humidity,
+        wind: action.wind,
+      };
+      this._state.card = choosedCity;
+      this._callSubscriber(this._state);
+    }
   },
 };
 export default store;

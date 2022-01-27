@@ -8,10 +8,9 @@ function App(props) {
     <div className="App">
       <Header />
       <Main
-        card={props.card}
-        cards={props.cards}
-        choosedTower={props.choosedTower}
-        choosedCity={props.choosedCity}
+        card={props.state.card}
+        cards={props.state.cards}
+        dispatch={props.dispatch}
       />
     </div>
   );
