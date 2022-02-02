@@ -1,3 +1,5 @@
+const CHOOSED_TOWER = 'CHOOSED-TOWER';
+
 let store = {
   _state: {
     cards: [
@@ -64,7 +66,7 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'CHOOSED-TOWER') {
+    if (action.type === CHOOSED_TOWER) {
       let choosedCity = {
         city: action.city,
         degrees: action.degrees,
@@ -77,5 +79,21 @@ let store = {
     }
   },
 };
+
+export const choosedTowerActionCreator = (
+  city,
+  degrees,
+  street,
+  humidity,
+  wind
+) => ({
+  type: CHOOSED_TOWER,
+  city: city,
+  degrees: degrees,
+  street: street,
+  humidity: humidity,
+  wind: wind,
+});
+
 export default store;
 window.store = store;
