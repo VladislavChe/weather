@@ -1,5 +1,5 @@
 import React from 'react';
-import { choosedTowerActionCreator } from '../../../../../state';
+import { choosedTowerActionCreator } from '../../../../../redux/main-branch';
 import styles from './Tower.module.css';
 
 const Tower = (props) => {
