@@ -1,4 +1,4 @@
-import mainBranchReducer from './main-branch';
+import mainBranchReducer from './main-branch-reducer';
 
 let store = {
   _state: {
