@@ -24,7 +24,7 @@ const Location = (props) => {
       </div>
       {/* <ul className={styles.list}>{cardsElements}</ul> */}
       <ul className={styles.list}>
-        <TowerContainer store={props.store} />
+        <TowerContainer />
       </ul>
     </div>
   );

@@ -7,7 +7,7 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      <Main store={props.store} />
+      <Main />
     </div>
   );
 }

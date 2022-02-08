@@ -10,7 +10,7 @@ const Sidebar = (props) => {
         <Search />
       </div>
       <div className={styles.locationWrapper}>
-        <Location store={props.store} />
+        <Location />
       </div>
     </div>
   );
