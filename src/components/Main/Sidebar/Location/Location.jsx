@@ -3,11 +3,11 @@ import styles from './Location.module.css';
 import TowerContainer from './Tower/TowerContainer';
 
 const Location = (props) => {
-  let state = props.store.getState();
+  // let state = props.store.getState();
 
-  let cardsElements = state.mainBranch.cards.map((card) => {
-    return <TowerContainer card={card} store={props.store} />;
-  });
+  // let cardsElements = state.mainBranch.cards.map((card) => {
+  //   return <TowerContainer card={card} store={props.store} />;
+  // });
 
   return (
     <div className={styles.location}>
@@ -22,7 +22,10 @@ const Location = (props) => {
           </p>
         </div>
       </div>
-      <ul className={styles.list}>{cardsElements}</ul>
+      {/* <ul className={styles.list}>{cardsElements}</ul> */}
+      <ul className={styles.list}>
+        <TowerContainer store={props.store} />
+      </ul>
     </div>
   );
 };
