@@ -7,7 +7,7 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      <Main mainBranch={props.state.mainBranch} dispatch={props.dispatch} />
+      <Main store={props.store} />
     </div>
   );
 }

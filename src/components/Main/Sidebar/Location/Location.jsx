@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './Location.module.css';
-import Tower from './Tower/Tower';
+import TowerContainer from './Tower/TowerContainer';
 
 const Location = (props) => {
-  // debugger;
-  let cardsElements = props.cards.map((card) => {
-    return <Tower card={card} dispatch={props.dispatch} />;
+  let state = props.store.getState();
+
+  let cardsElements = state.mainBranch.cards.map((card) => {
+    return <TowerContainer card={card} store={props.store} />;
   });
 
   return (
