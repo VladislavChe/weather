@@ -64,21 +64,17 @@ const mainBranchReducer = (state = initialState, action) => {
         humidity: action.humidity,
         wind: action.wind,
       };
-      state.card = choosedCity;
-      return state;
+      let stateCopy = { ...state };
+      stateCopy.card = { ...state.card };
+      stateCopy.card = choosedCity;
+      return stateCopy;
 
     default:
       return state;
   }
 };
 
-export const choosedTowerActionCreator = (
-  city,
-  degrees,
-  street,
-  humidity,
-  wind
-) => ({
+export const choosedTowerActionCreator = (city, degrees, street, humidity, wind) => ({
   type: CHOOSED_TOWER,
   city: city,
   degrees: degrees,
