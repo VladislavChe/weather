@@ -1,39 +1,39 @@
-const CHOOSED_TOWER = 'CHOOSED-TOWER';
+const CHOOSED_TOWER = "CHOOSED-TOWER";
 
 let initialState = {
   cards: [
     {
-      city: 'London',
+      city: "London",
       degrees: 11,
-      street: 'Broken Cluds',
+      street: "Broken Cluds",
       humidity: 91,
       wind: 1,
     },
     {
-      city: 'New York',
+      city: "New York",
       degrees: 12,
-      street: 'Broken Cluds',
+      street: "Broken Cluds",
       humidity: 92,
       wind: 2,
     },
     {
-      city: 'Moscow',
+      city: "Moscow",
       degrees: 13,
-      street: 'Broken Cluds',
+      street: "Broken Cluds",
       humidity: 93,
       wind: 3,
     },
     {
-      city: 'Minsk',
+      city: "Minsk",
       degrees: 14,
-      street: 'Broken Cluds',
+      street: "Broken Cluds",
       humidity: 94,
       wind: 4,
     },
     {
-      city: 'Paris',
+      city: "Paris",
       degrees: 15,
-      street: 'Broken Cluds',
+      street: "Broken Cluds",
       humidity: 95,
       wind: 5,
     },
@@ -46,9 +46,9 @@ let initialState = {
     // },
   ],
   card: {
-    city: 'City',
+    city: "City",
     degrees: 11,
-    street: 'Broken Cluds',
+    street: "Broken Cluds",
     humidity: 94,
     wind: 4,
   },
@@ -69,7 +69,13 @@ const mainBranchReducer = (state = initialState, action) => {
   }
 };
 
-export const choosedTowerActionCreator = (city, degrees, street, humidity, wind) => ({
+export const choosedTowerActionCreator = (
+  city,
+  degrees,
+  street,
+  humidity,
+  wind
+) => ({
   type: CHOOSED_TOWER,
   city: city,
   degrees: degrees,
