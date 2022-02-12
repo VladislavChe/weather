@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import { choosedTowerActionCreator } from "../../../../../redux/main-branch-reducer";
-import Tower from "./Tower";
+import { connect } from 'react-redux';
+import { choosedTowerActionCreator } from '../../../../../redux/main-branch-reducer';
+import Tower from './Tower';
 
 let mapStateToProps = (state) => {
   return {
@@ -10,10 +10,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    clickTower: (city, degrees, street, humidity, wind) => {
-      dispatch(
-        choosedTowerActionCreator(city, degrees, street, humidity, wind)
-      );
+    clickTower: (card) => {
+      dispatch(choosedTowerActionCreator(card));
     },
   };
 };
