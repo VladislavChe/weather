@@ -1,20 +1,20 @@
-.days ul {
+.days {
   display: flex;
 }
 
-.days ul li {
+.days li {
   margin-right: 29px;
 }
 
-.days ul li a {
+.days li a {
   display: inline-block;
   position: relative;
   z-index: 0;
   padding: 5px 10px;
 }
 
-.days ul li a::before,
-.days ul li a::after {
+.days li a::before,
+.days li a::after {
   content: '';
   position: absolute;
   top: 0;
@@ -25,12 +25,12 @@
   transition: all 0.5s ease-out;
 }
 
-.days ul li a::before {
+.days li a::before {
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
 }
 
-.days ul li a::after {
+.days li a::after {
   top: 50%;
   left: 0;
   width: 100%;
@@ -41,15 +41,15 @@
   transition: all 0.25s ease-out;
 }
 
-.days ul li a:hover {
+.days li a:hover {
   color: var(--main-color);
 }
 
-.days ul li a:hover:before {
+.days li a:hover:before {
   width: 100%;
 }
 
-.days ul li a:hover:after {
+.days li a:hover:after {
   height: 100%;
 }
 

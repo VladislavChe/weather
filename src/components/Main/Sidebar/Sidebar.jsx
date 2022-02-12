@@ -1,9 +1,9 @@
-import React from 'react';
-import Search from './Search/Search';
-import Location from './Location/Location';
-import styles from './Sidebar.module.css';
+import React from "react";
+import Search from "./Search/Search";
+import Location from "./Location/Location";
+import styles from "./Sidebar.module.css";
 
-const Sidebar = (props) => {
+const Sidebar = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.searchWrapper}>
