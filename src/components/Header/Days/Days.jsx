@@ -1,24 +1,25 @@
 import React from "react";
 import styles from "./Days.module.css";
+import { NavLink } from "react-router-dom";
 
 const Days = () => (
   <ul className={styles.days}>
     <li>
-      <a href="#">Yesterday</a>
+      <NavLink to="/">Yesterday</NavLink>
     </li>
     <li>
-      <a href="#" className={styles.active}>
+      <NavLink to="/" className={styles.active}>
         Today
-      </a>
+      </NavLink>
     </li>
     <li>
-      <a href="#">Tomorrow</a>
+      <NavLink to="/">Tomorrow</NavLink>
     </li>
     <li>
-      <a href="#">Week</a>
+      <NavLink to="/">Week</NavLink>
     </li>
     <li>
-      <a href="#">Month</a>
+      <NavLink to="/">Month</NavLink>
     </li>
   </ul>
 );

@@ -1,5 +1,5 @@
 .add {
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 20px 20px 0 0;
   background: var(--main-color);
   display: flex;
   align-items: center;
@@ -61,54 +61,4 @@
 
 .text {
   font-size: 19px;
-}
-
-.list {
-  background: #fff;
-  color: #000;
-  border-radius: 0px 0px 20px 20px;
-  padding: 20px 37px;
-}
-
-.list li {
-  position: relative;
-  text-align: left;
-  padding: 11px 32px 11px 0;
-  border-bottom: 1px solid #f3f3f3;
-  cursor: pointer;
-}
-
-.list li:after {
-  content: '';
-  height: 100%;
-  width: 100%;
-  width: 0;
-  background: #e17777;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: var(--transition);
-  z-index: 1;
-}
-
-.list li:hover:after {
-  width: 100%;
-}
-
-.list li:hover a {
-  color: #fff;
-}
-
-.list li a {
-  position: relative;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-.arrow {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 32px;
-  font-size: 12px;
 }
