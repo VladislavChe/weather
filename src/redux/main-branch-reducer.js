@@ -37,13 +37,6 @@ let initialState = {
       humidity: 95,
       wind: 5,
     },
-    // {
-    //   city: 'Vena',
-    //   degrees: 16,
-    //   street: 'Broken Cluds',
-    //   humidity: 96,
-    //   wind: 6,
-    // },
   ],
   card: {
     city: 'City',
