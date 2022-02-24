@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./Towers.module.css";
+import React from 'react';
+import styles from './Towers.module.css';
 
-const Towers = ({ mainBranch: { cards }, clickTower }) => (
+const Towers = ({ mainBranch: { cards }, choosedTower }) => (
   <ul className={styles.list}>
     {cards.map((card) => {
-      const handler = () => clickTower(card);
+      const handler = () => choosedTower(card);
 
       return (
         <li onClick={handler} key={card.city}>

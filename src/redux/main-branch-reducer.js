@@ -67,7 +67,7 @@ const mainBranchReducer = (state = initialState, action) => {
   }
 };
 
-export const choosedTowerActionCreator = (card) => ({
+export const choosedTower = (card) => ({
   type: CHOOSED_TOWER,
   card: card,
 });
