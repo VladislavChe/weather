@@ -20,7 +20,7 @@ class TowersContainer extends React.Component {
       <Towers
         clickTower={this.clickTower}
         choosedTower={this.props.choosedTower}
-        mainBranch={this.props.mainBranch}
+        cards={this.props.mainBranch.cards}
       />
     );
   }

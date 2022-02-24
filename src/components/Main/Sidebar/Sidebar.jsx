@@ -1,16 +1,17 @@
-import React from "react";
-import Search from "./Search/Search";
-import Location from "./Location/Location";
-import styles from "./Sidebar.module.css";
+import React from 'react';
+import Location from './Location/Location';
+import styles from './Sidebar.module.css';
+import SearchContainer from './Search/SearchContainer';
+import LocationContainer from './Location/LocationContainer';
 
 const Sidebar = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.searchWrapper}>
-        <Search />
+        <SearchContainer />
       </div>
       <div className={styles.locationWrapper}>
-        <Location />
+        <LocationContainer />
       </div>
     </div>
   );

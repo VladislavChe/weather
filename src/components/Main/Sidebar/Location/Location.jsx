@@ -3,8 +3,13 @@ import styles from './Location.module.css';
 import TowersContainer from './Towers/TowersContainer';
 
 const Location = (props) => {
+  let favouriteLocation = props.favouriteLocation;
+  const clickAddLocation = () => {
+    favouriteLocation = props.searchText;
+    props.addFavouriteLocations(favouriteLocation);
+  };
   return (
-    <div className={styles.location}>
+    <div onClick={clickAddLocation} className={styles.location}>
       <div className={styles.add}>
         <div className={styles.plus}>
           <span>+</span>

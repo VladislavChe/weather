@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './Towers.module.css';
 
-const Towers = ({ mainBranch: { cards }, choosedTower, clickTower }) => {
+const Towers = ({ cards, choosedTower, clickTower }) => {
+  debugger;
   return (
     <ul className={styles.list}>
       {cards.map((card) => {
