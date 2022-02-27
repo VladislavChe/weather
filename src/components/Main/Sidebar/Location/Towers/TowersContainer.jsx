@@ -5,15 +5,29 @@ import { choosedTower } from '../../../../../redux/main-branch-reducer';
 import Towers from './Towers';
 
 class TowersContainer extends React.Component {
-  componentDidMount() {
-    // API.getCityName(this.cardCity).then((data) => {
-    //   console.log(data);
-    // });
-  }
+  componentDidMount() {}
 
   clickTower = (tower) => {
-    this.props.choosedTower(tower);
-    console.log(tower);
+    API.getCityName(tower).then((data) => {
+      let lat = data[0].lat;
+      let lon = data[0].lon;
+
+      API.getCurrentCity(lat, lon).then((data) => {
+        let city = data.name;
+        let degrees = Math.round(data.main.temp - 273.15);
+        let humidity = data.main.humidity;
+        let wind = Math.round(data.wind.speed);
+
+        let card = {
+          city: city,
+          degrees: degrees,
+          street: 'Broken Cluds',
+          humidity: humidity,
+          wind: wind,
+        };
+        this.props.choosedTower(card);
+      });
+    });
   };
 
   render() {

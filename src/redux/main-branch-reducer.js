@@ -57,7 +57,7 @@ const mainBranchReducer = (state = initialState, action) => {
     case CHOOSED_TOWER:
       return {
         ...state,
-        ...(state.card.city = action.tower),
+        card: action.card,
       };
     case UPDATE_NEW_SYMBOL_SEARCH:
       return {
@@ -75,9 +75,9 @@ const mainBranchReducer = (state = initialState, action) => {
   }
 };
 
-export const choosedTower = (tower) => ({
+export const choosedTower = (card) => ({
   type: CHOOSED_TOWER,
-  tower,
+  card,
 });
 
 export const updateSearchSymbol = (newSymbol) => ({
