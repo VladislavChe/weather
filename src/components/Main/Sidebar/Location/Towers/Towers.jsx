@@ -1,22 +1,19 @@
 import React from 'react';
 import styles from './Towers.module.css';
 
-const Towers = ({ cards, choosedTower, clickTower }) => {
-  debugger;
+const Towers = ({ cards, clickTower }) => {
   return (
     <ul className={styles.list}>
-      {cards.map((card) => {
-        const handler = () => {
-          clickTower(card);
-          choosedTower(card);
+      {cards.map((el, i) => {
+        const hendler = () => {
+          clickTower(el);
         };
-
         return (
-          <li onClick={handler} key={card.city}>
+          <li key={i} onClick={hendler}>
             <span className={styles.arrow}>
               <ArrowIcon />
             </span>
-            <p className={styles.name}>{card.city}</p>
+            <p className={styles.name}>{el}</p>
           </li>
         );
       })}

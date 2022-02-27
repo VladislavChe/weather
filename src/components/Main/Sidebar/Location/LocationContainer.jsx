@@ -7,7 +7,6 @@ const LocationContainer = (props) => {
   return (
     <Location
       addFavouriteLocations={props.addFavouriteLocations}
-      favouriteLocation={props.mainBranch.favouriteLocation}
       searchText={props.mainBranch.searchText}
     />
   );

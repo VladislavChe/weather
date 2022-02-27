@@ -50,7 +50,6 @@ let initialState = {
     wind: 4,
   },
   searchText: '',
-  favouriteLocation: '12',
 };
 
 const mainBranchReducer = (state = initialState, action) => {
@@ -58,7 +57,7 @@ const mainBranchReducer = (state = initialState, action) => {
     case CHOOSED_TOWER:
       return {
         ...state,
-        card: action.card,
+        ...(state.card.city = action.tower),
       };
     case UPDATE_NEW_SYMBOL_SEARCH:
       return {
@@ -68,7 +67,7 @@ const mainBranchReducer = (state = initialState, action) => {
     case ADD_FAVOURITE_LOCATIONS:
       return {
         ...state,
-        cards: action.location,
+        cards: [...state.cards, action.location],
       };
 
     default:
@@ -76,9 +75,9 @@ const mainBranchReducer = (state = initialState, action) => {
   }
 };
 
-export const choosedTower = (card) => ({
+export const choosedTower = (tower) => ({
   type: CHOOSED_TOWER,
-  card: card,
+  tower,
 });
 
 export const updateSearchSymbol = (newSymbol) => ({

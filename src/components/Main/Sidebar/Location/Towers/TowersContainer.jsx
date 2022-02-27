@@ -11,18 +11,13 @@ class TowersContainer extends React.Component {
     // });
   }
 
-  clickTower = (card) => {
-    console.log(card.city);
+  clickTower = (tower) => {
+    this.props.choosedTower(tower);
+    console.log(tower);
   };
 
   render() {
-    return (
-      <Towers
-        clickTower={this.clickTower}
-        choosedTower={this.props.choosedTower}
-        cards={this.props.mainBranch.cards}
-      />
-    );
+    return <Towers clickTower={this.clickTower} cards={this.props.mainBranch.cards} />;
   }
 }
 
