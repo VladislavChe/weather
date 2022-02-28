@@ -50,10 +50,16 @@ let initialState = {
     wind: 4,
   },
   searchText: '',
+  isLoading: false,
 };
 
 const mainBranchReducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'LOADING':
+      return {
+        ...state,
+        isLoading: action.state,
+      };
     case CHOOSED_TOWER:
       return {
         ...state,
@@ -88,5 +94,7 @@ export const addFavouriteLocations = (location) => ({
   type: ADD_FAVOURITE_LOCATIONS,
   location,
 });
+
+export const isLoading = (state) => ({ type: 'LOADING', state });
 
 export default mainBranchReducer;
