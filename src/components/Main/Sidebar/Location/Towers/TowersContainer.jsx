@@ -31,26 +31,30 @@ class TowersContainer extends React.Component {
     this.props.choosedTower(card);
     this.props.isLoading(false);
 
-    // API.getCityName(tower).then((data) => {
-    //   const lat = data[0].lat;
-    //   const lon = data[0].lon;
-
-    //   API.getCurrentCity(lat, lon).then((data) => {
-    //     let city = data.name;
-    //     let degrees = Math.round(data.main.temp - 273.15);
-    //     let humidity = data.main.humidity;
-    //     let wind = Math.round(data.wind.speed);
-
-    //     let card = {
-    //       city: city,
-    //       degrees: degrees,
-    //       street: 'Broken Cluds',
-    //       humidity: humidity,
-    //       wind: wind,
-    //     };
-    //     this.props.choosedTower(card);
-    //   });
-    // });
+    {
+      /*
+      API.getCityName(tower).then((data) => {
+        const lat = data[0].lat;
+        const lon = data[0].lon;
+  
+        API.getCurrentCity(lat, lon).then((data) => {
+          let city = data.name;
+          let degrees = Math.round(data.main.temp - 273.15);
+          let humidity = data.main.humidity;
+          let wind = Math.round(data.wind.speed);
+  
+          let card = {
+            city: city,
+            degrees: degrees,
+            street: 'Broken Cluds',
+            humidity: humidity,
+            wind: wind,
+          };
+          this.props.choosedTower(card);
+        });
+      });
+      */
+    }
   };
 
   render() {

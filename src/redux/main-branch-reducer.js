@@ -1,3 +1,4 @@
+import { API } from './../API/api';
 const CHOOSED_TOWER = 'CHOOSED-TOWER';
 const UPDATE_NEW_SYMBOL_SEARCH = 'UPDATE_NEW_SYMBOL_SEARCH';
 const ADD_FAVOURITE_LOCATIONS = 'ADD_FAVOURITE_LOCATIONS';
@@ -81,11 +82,11 @@ const mainBranchReducer = (state = initialState, action) => {
   }
 };
 
+//Action Creators
 export const choosedTower = (card) => ({
   type: CHOOSED_TOWER,
   card,
 });
-
 export const updateSearchSymbol = (newSymbol) => ({
   type: UPDATE_NEW_SYMBOL_SEARCH,
   newSymbol,
@@ -94,7 +95,31 @@ export const addFavouriteLocations = (location) => ({
   type: ADD_FAVOURITE_LOCATIONS,
   location,
 });
-
 export const isLoading = (state) => ({ type: 'LOADING', state });
 
+//Thunk creators
+export const getWeather = (tower) => {
+  return async (dispatch) => {
+    dispatch(isLoading(true));
+    const data = await API.getCityName(tower);
+    let lat = data[0].lat;
+    let lon = data[0].lon;
+    const result = await API.getCurrentCity(lat, lon);
+
+    let city = result.name;
+    let degrees = Math.round(result.main.temp - 273.15);
+    let humidity = result.main.humidity;
+    let wind = Math.round(result.wind.speed);
+
+    let card = {
+      city: city,
+      degrees: degrees,
+      street: 'Broken Cluds',
+      humidity: humidity,
+      wind: wind,
+    };
+    dispatch(choosedTower(card));
+    dispatch(isLoading(false));
+  };
+};
 export default mainBranchReducer;
