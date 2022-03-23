@@ -33,12 +33,33 @@ export const setAuthUserData = (userId, email, login) => ({
 });
 
 //Thunk creators
+//Autorized
 export const getAuthUserData = () => {
   return (dispatch) => {
     API.setUserData().then((response) => {
       if (response.data.resultCode === 0) {
         let { id, login, email } = response.data.data;
         dispatch(setAuthUserData(id, email, login));
+      }
+    });
+  };
+};
+//Login
+export const login = (email, password, rememberMe) => {
+  return (dispatch) => {
+    API.login(email, password, rememberMe).then((response) => {
+      if (response.data.resultCode === 0) {
+        dispatch(getAuthUserData());
+      }
+    });
+  };
+};
+//Logout
+export const logout = () => {
+  return (dispatch) => {
+    API.logout().then((response) => {
+      if (response.data.resultCode === 0) {
+        dispatch(setAuthUserData(null, null, null, false));
       }
     });
   };

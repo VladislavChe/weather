@@ -1,12 +1,16 @@
-import React from 'react';
-import Search from './Search';
-import { connect } from 'react-redux';
-import { updateSearchSymbol } from '../../../../redux/main-branch-reducer';
+import React from "react";
+import Search from "./Search";
+import { connect } from "react-redux";
+import {
+  addFavouriteLocations,
+  newSearchText,
+} from "../../../../redux/main-branch-reducer";
 
 const SearchContainer = (props) => {
   return (
     <Search
-      updateSearchSymbol={props.updateSearchSymbol}
+      addFavouriteLocations={props.addFavouriteLocations}
+      newSearchText={props.newSearchText}
       searchText={props.mainBranch.searchText}
     />
   );
@@ -18,4 +22,7 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { updateSearchSymbol })(SearchContainer);
+export default connect(mapStateToProps, {
+  newSearchText,
+  addFavouriteLocations,
+})(SearchContainer);

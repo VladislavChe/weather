@@ -3,7 +3,7 @@ import styles from "./Logo.module.css";
 import { Link } from "react-router-dom";
 
 const Logo = () => (
-  <Link to="/" className={styles.logo}>
+  <Link to="/main" className={styles.logo}>
     Weather <span>forecast</span>
   </Link>
 );

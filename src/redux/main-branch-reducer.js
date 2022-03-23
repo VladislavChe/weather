@@ -1,7 +1,7 @@
-import { API } from './../API/api';
-const CHOOSED_TOWER = 'CHOOSED-TOWER';
-const UPDATE_NEW_SYMBOL_SEARCH = 'UPDATE_NEW_SYMBOL_SEARCH';
-const ADD_FAVOURITE_LOCATIONS = 'ADD_FAVOURITE_LOCATIONS';
+import { API } from "./../API/api";
+const CHOOSED_TOWER = "CHOOSED-TOWER";
+const NEW_SEARCH_TEXT = "NEW_SEARCH_TEXT";
+const ADD_FAVOURITE_LOCATIONS = "ADD_FAVOURITE_LOCATIONS";
 
 let initialState = {
   cards: [
@@ -44,19 +44,19 @@ let initialState = {
     */
   ],
   card: {
-    city: 'City',
+    city: "City",
     degrees: 11,
-    street: 'Broken Cluds',
+    street: "Broken Cluds",
     humidity: 94,
     wind: 4,
   },
-  searchText: '',
+  searchText: "",
   isLoading: false,
 };
 
 const mainBranchReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOADING':
+    case "LOADING":
       return {
         ...state,
         isLoading: action.state,
@@ -66,15 +66,16 @@ const mainBranchReducer = (state = initialState, action) => {
         ...state,
         card: action.card,
       };
-    case UPDATE_NEW_SYMBOL_SEARCH:
+    case NEW_SEARCH_TEXT:
       return {
         ...state,
-        searchText: action.newSymbol,
+        searchText: action.newText,
       };
     case ADD_FAVOURITE_LOCATIONS:
       return {
         ...state,
         cards: [...state.cards, action.location],
+        searchText: "",
       };
 
     default:
@@ -87,15 +88,15 @@ export const choosedTower = (card) => ({
   type: CHOOSED_TOWER,
   card,
 });
-export const updateSearchSymbol = (newSymbol) => ({
-  type: UPDATE_NEW_SYMBOL_SEARCH,
-  newSymbol,
+export const newSearchText = (newText) => ({
+  type: NEW_SEARCH_TEXT,
+  newText,
 });
 export const addFavouriteLocations = (location) => ({
   type: ADD_FAVOURITE_LOCATIONS,
   location,
 });
-export const isLoading = (state) => ({ type: 'LOADING', state });
+export const isLoading = (state) => ({ type: "LOADING", state });
 
 //Thunk creators
 export const getWeather = (tower) => {
@@ -114,7 +115,7 @@ export const getWeather = (tower) => {
     let card = {
       city: city,
       degrees: degrees,
-      street: 'Broken Cluds',
+      street: "Broken Cluds",
       humidity: humidity,
       wind: wind,
     };

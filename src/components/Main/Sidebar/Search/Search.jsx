@@ -1,30 +1,44 @@
-import React from 'react';
-import styles from './Search.module.css';
-import searchIcon from '../../../../img/search-icon.png';
+import React from "react";
+import styles from "./Search.module.css";
+import searchIcon from "../../../../img/search-icon.png";
+import { Field, reduxForm } from "redux-form";
+import { Input } from "../../../../common/formsControls/formsControls";
 
 const Search = (props) => {
-  let newSymbol = React.createRef();
-
-  let onSearchChange = () => {
-    let symbol = newSymbol.current.value;
-    props.updateSearchSymbol(symbol);
+  const addFavouriteLocations = (values) => {
+    props.addFavouriteLocations(props.searchText);
+    values.serchInput = "";
   };
-
+  const SearchTextChange = (values) => {
+    props.newSearchText(values.serchInput);
+  };
   return (
-    <div>
-      <form className={styles.form}>
-        <input
-          onChange={onSearchChange}
-          ref={newSymbol}
-          className={styles.input}
-          type="text"
-          placeholder="Search city"
-          value={props.searchText}
-        />
-        <img className={styles.img} src={searchIcon} alt="loop" />
-      </form>
-    </div>
+    <SearchReduxForm
+      onChange={SearchTextChange}
+      onSubmit={addFavouriteLocations}
+    />
   );
 };
+
+const SearchForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit} className={styles.form}>
+      <Field
+        component={Input}
+        name={"serchInput"}
+        placeholder="Search city"
+        className={styles.input}
+        type="text"
+      />
+      <button>
+        <img className={styles.img} src={searchIcon} alt="loop" />
+      </button>
+    </form>
+  );
+};
+
+const SearchReduxForm = reduxForm({
+  form: "Search", // Уникальное имя формы
+})(SearchForm);
 
 export default Search;

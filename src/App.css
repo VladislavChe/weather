@@ -146,3 +146,11 @@ li {
     transform: rotate(360deg);
   }
 }
+
+.main {
+  height: 500px;
+  background: rgb(1, 53, 110);
+  background: url(./img/home.jpg) no-repeat top center;
+  height: 100vh;
+}
+
