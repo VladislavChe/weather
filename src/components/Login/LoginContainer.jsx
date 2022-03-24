@@ -1,16 +1,25 @@
+import React from "react";
 import { connect } from "react-redux";
 import Login from "./Login";
+import { Navigate } from "react-router-dom";
+import { login } from "../../redux/auth-redicer";
+
+class LoginContainer extends React.Component {
+  componentDidMount() {}
+
+  render() {
+    if (this.props.isAuth) {
+      return <Navigate to={"/main"} />;
+    }
+
+    return <Login {...this.props} />;
+  }
+}
 
 let mapStateToProps = (state) => {
   return {
-    mainBranch: state.mainBranch,
+    isAuth: state.auth.isAuth,
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(Login);
-
-export default LoginContainer;
+export default connect(mapStateToProps, { login })(LoginContainer);

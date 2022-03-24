@@ -10,20 +10,49 @@
     background: rgba(0, 15, 26, 0.54);
     padding: 30px 40px 38px 50px;
     border-radius: 20px;
+    width: 400px;
 }
 h1 {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+.loginForm div {
+    /*display: block;*/
 }
 .input {
     border-radius: 20px;
-    height: 49px;
+    height: 39px;
     font-size: 14px;
     width: 100%;
     text-align: left;
-    padding: 5px 0 5px 0;
-    margin-left: 24px;
+    padding: 5px 15px;
     border: none;
-    width: 80%;
+    width: 100%;
     cursor: text;
+    margin-bottom: 20px;
+}
+.rememberMeWrapp {
+    display: flex;
+    justify-content: center;
+}
+.rememberMe {
+    display: inline-block;
+}
+.rememberMeWrapp span {
+    margin-left: 10px;
+}
+.btn {
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+    border: 1px solid white;
+    padding: 5px;
+}
+.btn:hover {
+    background: white;
+    color: black;
 }

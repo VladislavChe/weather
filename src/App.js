@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Main from "./components/Main/Main";
 import { Route, Routes } from "react-router";
-import Login from "./components/Login/Login";
+import MainContainer from "./components/Main/MainContainer";
+import LoginContainer from "./components/Login/LoginContainer";
 
 function App(props) {
   return (
@@ -12,9 +12,9 @@ function App(props) {
       <main className={"main"}>
         <div className="container">
           <Routes>
-            <Route exact path="/" element={<Main />} />
-            <Route path="main" element={<Main />} />
-            <Route path="login" element={<Login />} />
+            <Route exact path="/" element={<MainContainer />} />
+            <Route path="main" element={<MainContainer />} />
+            <Route path="login" element={<LoginContainer />} />
           </Routes>
         </div>
       </main>
