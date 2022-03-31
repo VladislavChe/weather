@@ -56,3 +56,10 @@ h1 {
     background: white;
     color: black;
 }
+.formSummaryError {
+    display: block;
+    border: 1px solid red;
+    padding: 5px;
+    margin-bottom: 20px;
+    color: darkred;
+}

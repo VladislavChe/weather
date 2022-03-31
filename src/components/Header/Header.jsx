@@ -12,7 +12,7 @@ const Header = (props) => (
         <Days />
         {props.isAuth ? (
           <div className={styles.login}>
-            {props.login} -{" "}
+            {props.login}{" "}
             <button className={styles.btn} onClick={props.logout}>
               Logout
             </button>{" "}
