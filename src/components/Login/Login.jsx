@@ -6,6 +6,20 @@ import { Input } from "../../common/formsControls/formsControls";
 
 let maxLength20 = maxLengthCreator(50);
 
+const Login = (props) => {
+  const onSubmit = (formData) => {
+    props.login(formData.email, formData.password, formData.rememberMe);
+  };
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.box}>
+        <h1>LOGIN</h1>
+        <LoginReduxForm onSubmit={onSubmit} />
+      </div>
+    </div>
+  );
+};
+
 const LoginForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit} className={styles.loginForm}>
@@ -41,19 +55,5 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({
   form: "Login", // Уникальное имя формы
 })(LoginForm);
-
-const Login = (props) => {
-  const onSubmit = (formData) => {
-    props.login(formData.email, formData.password, formData.rememberMe);
-  };
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.box}>
-        <h1>LOGIN</h1>
-        <LoginReduxForm onSubmit={onSubmit} />
-      </div>
-    </div>
-  );
-};
 
 export default Login;

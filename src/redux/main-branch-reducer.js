@@ -106,7 +106,6 @@ export const getWeather = (tower) => {
     let lat = data[0].lat;
     let lon = data[0].lon;
     const result = await API.getCurrentCity(lat, lon);
-
     let city = result.name;
     let degrees = Math.round(result.main.temp - 273.15);
     let humidity = result.main.humidity;
@@ -123,4 +122,19 @@ export const getWeather = (tower) => {
     dispatch(isLoading(false));
   };
 };
+
+export const test2 = (tower) => {
+  debugger;
+  return (dispatch) => {
+    const data = API.getCityName(tower).then((response) => response.data);
+    console.log(data);
+    dispatch(isLoading(false));
+  };
+
+  // let lat = data[0].lat;
+  // let lon = data[0].lon;
+  // const result = API.getCurrentCity(lat, lon);
+  // console.log(result);
+};
+
 export default mainBranchReducer;

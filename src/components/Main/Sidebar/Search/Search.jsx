@@ -5,8 +5,12 @@ import { Field, reduxForm } from "redux-form";
 import { Input } from "../../../../common/formsControls/formsControls";
 
 const Search = (props) => {
+  const searchTown = (town) => {
+    props.getWeather(town);
+  };
   const addFavouriteLocations = (values) => {
     props.addFavouriteLocations(props.searchText);
+    searchTown(props.searchText);
     values.serchInput = "";
   };
   const SearchTextChange = (values) => {

@@ -5,10 +5,11 @@ import { Route, Routes } from "react-router";
 import MainContainer from "./components/Main/MainContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 
-function App(props) {
+const App = (props) => {
   return (
     <div className="App">
       <HeaderContainer />
+
       <main className={"main"}>
         <div className="container">
           <Routes>
@@ -20,6 +21,6 @@ function App(props) {
       </main>
     </div>
   );
-}
+};
 
 export default App;

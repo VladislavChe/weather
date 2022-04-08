@@ -1,8 +1,7 @@
-import React from 'react';
-import Location from './Location/Location';
-import styles from './Sidebar.module.css';
-import SearchContainer from './Search/SearchContainer';
-import LocationContainer from './Location/LocationContainer';
+import React from "react";
+import styles from "./Sidebar.module.css";
+import SearchContainer from "./Search/SearchContainer";
+import LocationContainer from "./Location/LocationContainer";
 
 const Sidebar = () => {
   return (
