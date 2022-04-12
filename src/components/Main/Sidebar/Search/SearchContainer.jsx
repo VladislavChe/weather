@@ -4,16 +4,16 @@ import { connect } from "react-redux";
 import {
   addFavouriteLocations,
   getWeather,
-  newSearchText,
 } from "../../../../redux/main-branch-reducer";
 
 const SearchContainer = (props) => {
   return (
     <Search
       addFavouriteLocations={props.addFavouriteLocations}
-      newSearchText={props.newSearchText}
       searchText={props.mainBranch.searchText}
       getWeather={props.getWeather}
+      value={props.value}
+      setValue={props.setValue}
     />
   );
 };
@@ -25,7 +25,6 @@ let mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  newSearchText,
   addFavouriteLocations,
   getWeather,
 })(SearchContainer);

@@ -4,45 +4,7 @@ const NEW_SEARCH_TEXT = "NEW_SEARCH_TEXT";
 const ADD_FAVOURITE_LOCATIONS = "ADD_FAVOURITE_LOCATIONS";
 
 let initialState = {
-  cards: [
-    /*
-    {
-      city: 'London',
-      degrees: 11,
-      street: 'Broken Cluds',
-      humidity: 91,
-      wind: 1,
-    },
-    {
-      city: 'New York',
-      degrees: 12,
-      street: 'Broken Cluds',
-      humidity: 92,
-      wind: 2,
-    },
-    {
-      city: 'Moscow',
-      degrees: 13,
-      street: 'Broken Cluds',
-      humidity: 93,
-      wind: 3,
-    },
-    {
-      city: 'Minsk',
-      degrees: 14,
-      street: 'Broken Cluds',
-      humidity: 94,
-      wind: 4,
-    },
-    {
-      city: 'Paris',
-      degrees: 15,
-      street: 'Broken Cluds',
-      humidity: 95,
-      wind: 5,
-    },
-    */
-  ],
+  cards: [],
   card: {
     city: "City",
     degrees: 11,
@@ -75,7 +37,7 @@ const mainBranchReducer = (state = initialState, action) => {
       return {
         ...state,
         cards: [...state.cards, action.location],
-        searchText: "",
+        searchText: action.location,
       };
 
     default:
@@ -87,10 +49,6 @@ const mainBranchReducer = (state = initialState, action) => {
 export const choosedTower = (card) => ({
   type: CHOOSED_TOWER,
   card,
-});
-export const newSearchText = (newText) => ({
-  type: NEW_SEARCH_TEXT,
-  newText,
 });
 export const addFavouriteLocations = (location) => ({
   type: ADD_FAVOURITE_LOCATIONS,
@@ -121,20 +79,6 @@ export const getWeather = (tower) => {
     dispatch(choosedTower(card));
     dispatch(isLoading(false));
   };
-};
-
-export const test2 = (tower) => {
-  debugger;
-  return (dispatch) => {
-    const data = API.getCityName(tower).then((response) => response.data);
-    console.log(data);
-    dispatch(isLoading(false));
-  };
-
-  // let lat = data[0].lat;
-  // let lon = data[0].lon;
-  // const result = API.getCurrentCity(lat, lon);
-  // console.log(result);
 };
 
 export default mainBranchReducer;

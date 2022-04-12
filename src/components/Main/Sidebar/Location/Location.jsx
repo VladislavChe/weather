@@ -3,9 +3,12 @@ import styles from "./Location.module.css";
 import TowersContainer from "./Towers/TowersContainer";
 
 const Location = (props) => {
+  let [value, setValue] = [props.value, props.setValue];
+
   const clickAddLocation = () => {
-    props.addFavouriteLocations(props.searchText);
-    props.getWeather(props.searchText);
+    props.addFavouriteLocations(value);
+    props.getWeather(value);
+    setValue("");
   };
   return (
     <div className={styles.location}>

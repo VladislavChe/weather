@@ -10,6 +10,8 @@ const LocationContainer = (props) => {
       addFavouriteLocations={props.addFavouriteLocations}
       getWeather={props.getWeather}
       searchText={props.mainBranch.searchText}
+      value={props.value}
+      setValue={props.setValue}
     />
   );
 };
