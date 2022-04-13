@@ -80,5 +80,12 @@ export const getWeather = (tower) => {
     dispatch(isLoading(false));
   };
 };
-
+export const addToLocalStorage = (towns) => {
+  return (dispatch) => {
+    localStorage.setItem("cities", towns);
+    let localStorageRef = localStorage.getItem(towns);
+    console.log(localStorageRef);
+    // dispatch(addFavouriteLocations());
+  };
+};
 export default mainBranchReducer;

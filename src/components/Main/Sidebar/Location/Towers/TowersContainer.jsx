@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
+  addToLocalStorage,
   choosedTower,
   getWeather,
   isLoading,
@@ -15,7 +16,11 @@ const TowersContainer = (props) => {
   return props.mainBranch.isLoading ? (
     "Loading"
   ) : (
-    <Towers clickTower={clickTower} cards={props.mainBranch.cards} />
+    <Towers
+      clickTower={clickTower}
+      cards={props.mainBranch.cards}
+      addToLocalStorage={props.addToLocalStorage}
+    />
   );
 };
 
@@ -29,4 +34,5 @@ export default connect(mapStateToProps, {
   choosedTower,
   isLoading,
   getWeather,
+  addToLocalStorage,
 })(TowersContainer);

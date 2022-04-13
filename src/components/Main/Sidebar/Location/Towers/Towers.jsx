@@ -1,19 +1,33 @@
-import React from 'react';
-import styles from './Towers.module.css';
+import React, { useEffect, useState } from "react";
+import styles from "./Towers.module.css";
 
-const Towers = ({ cards, clickTower }) => {
+const Towers = ({ clickTower }) => {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const cards = JSON.parse(localStorage.getItem("items"));
+    if (cards) {
+      setCards(cards);
+    }
+  }, []);
   return (
     <ul className={styles.list}>
+      <span className={styles.clearAll}>Clear All (x)</span>
       {cards.map((el, i) => {
+        // localStorage.setItem("city:", cards);
+        // addToLocalStorage(cards);
         const hendler = () => {
           clickTower(el);
         };
         return (
           <li key={i} onClick={hendler}>
-            <span className={styles.arrow}>
-              <ArrowIcon />
-            </span>
-            <p className={styles.name}>{el}</p>
+            <div className={styles.townWrapp}>
+              <span className={styles.arrow}>
+                <ArrowIcon />
+              </span>
+              <p className={styles.name}>{el}</p>
+            </div>
+            <span className={styles.close}>X</span>
           </li>
         );
       })}

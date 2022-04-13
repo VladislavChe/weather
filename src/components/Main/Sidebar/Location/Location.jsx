@@ -8,6 +8,7 @@ const Location = (props) => {
   const clickAddLocation = () => {
     props.addFavouriteLocations(value);
     props.getWeather(value);
+    props.setItems([value, ...props.items]);
     setValue("");
   };
   return (

@@ -12,6 +12,8 @@ const LocationContainer = (props) => {
       searchText={props.mainBranch.searchText}
       value={props.value}
       setValue={props.setValue}
+      items={props.items}
+      setItems={props.setItems}
     />
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Search.module.css";
 import searchIcon from "../../../../img/search-icon.png";
 
@@ -11,6 +11,7 @@ const Search = (props) => {
   const addFavouriteLocations = (values) => {
     props.addFavouriteLocations(values);
     searchTown(values);
+    props.setItems([values, ...props.items]);
     setValue("");
   };
   return (

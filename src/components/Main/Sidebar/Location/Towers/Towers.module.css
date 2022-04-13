@@ -6,12 +6,28 @@
   border-radius: 0 0 20px 20px;
 }
 
+.clearAll {
+  font-size: 12px;
+  justify-content: flex-end;
+  display: flex;
+  padding-right: 11px;
+  margin-bottom: 10px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.clearAll:hover {
+  color: #B4B4B4;
+  transition: var(--transition);
+}
+
 .list li {
   position: relative;
 
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 11px 32px 11px 0;
+  padding: 11px 0;
 
   border-bottom: 1px solid #f3f3f3;
   cursor: pointer;
@@ -32,7 +48,7 @@
 }
 
 .list li:hover:after {
-  width: 100%;
+  width: 90%;
 }
 
 .list li:hover .name {
@@ -41,6 +57,11 @@
 
 .list li:hover .arrow {
   fill: #fff;
+}
+
+.townWrapp {
+  display: flex;
+  width: 90%;
 }
 
 .name,
@@ -65,4 +86,15 @@
   width: 100%;
   height: auto;
   transition: var(--transition);
+}
+
+.close {
+  width: 10%;
+  font-size: 12px;
+  transition: var(--transition)
+}
+
+.close:hover {
+  color: #B4B4B4;
+  transition: var(--transition)
 }
