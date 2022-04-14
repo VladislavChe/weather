@@ -1,38 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Towers.module.css";
 
-const Towers = ({ clickTower }) => {
-  const [cards, setCards] = useState([]);
+const Towers = (props) => {
+  const cards = props.items ?? [];
 
-  useEffect(() => {
-    const cards = JSON.parse(localStorage.getItem("items"));
-    if (cards) {
-      setCards(cards);
-    }
-  }, []);
-  return (
+  const clearLocalStorage = () => {
+    props.setItems([]);
+  };
+
+  const removeItem = (index) => {
+    let newCards = cards.filter((card, i) => i !== index);
+    props.setItems([...newCards]);
+  };
+
+  return cards.length > 0 ? (
     <ul className={styles.list}>
-      <span className={styles.clearAll}>Clear All (x)</span>
+      <span onClick={clearLocalStorage} className={styles.clearAll}>
+        Clear All (x)
+      </span>
       {cards.map((el, i) => {
-        // localStorage.setItem("city:", cards);
-        // addToLocalStorage(cards);
-        const hendler = () => {
-          clickTower(el);
+        const handler = () => {
+          props.clickTower(el);
         };
         return (
-          <li key={i} onClick={hendler}>
+          <li key={i} onClick={handler}>
             <div className={styles.townWrapp}>
               <span className={styles.arrow}>
                 <ArrowIcon />
               </span>
-              <p className={styles.name}>{el}</p>
+              <p onClick={clearLocalStorage} className={styles.name}>
+                {el}
+              </p>
             </div>
-            <span className={styles.close}>X</span>
+            <span onClick={() => removeItem(i)} className={styles.close}>
+              x
+            </span>
           </li>
         );
       })}
     </ul>
-  );
+  ) : null;
 };
 
 const ArrowIcon = () => (

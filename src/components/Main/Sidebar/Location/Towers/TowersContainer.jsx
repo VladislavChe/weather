@@ -20,6 +20,8 @@ const TowersContainer = (props) => {
       clickTower={clickTower}
       cards={props.mainBranch.cards}
       addToLocalStorage={props.addToLocalStorage}
+      items={props.items}
+      setItems={props.setItems}
     />
   );
 };

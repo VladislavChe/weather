@@ -24,7 +24,7 @@ const Location = (props) => {
           </p>
         </div>
       </div>
-      <TowersContainer />
+      <TowersContainer items={props.items} setItems={props.setItems} />
     </div>
   );
 };

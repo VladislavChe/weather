@@ -5,7 +5,6 @@ import LocationContainer from "./Location/LocationContainer";
 
 const Sidebar = () => {
   let [value, setValue] = useState("");
-
   let [items, setItems] = useState(
     JSON.parse(localStorage.getItem("items")) ?? []
   );
