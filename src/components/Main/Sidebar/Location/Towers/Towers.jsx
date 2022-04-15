@@ -23,14 +23,12 @@ const Towers = (props) => {
           props.clickTower(el);
         };
         return (
-          <li key={i} onClick={handler}>
-            <div className={styles.townWrapp}>
+          <li key={i}>
+            <div onClick={handler} className={styles.townWrapp}>
               <span className={styles.arrow}>
                 <ArrowIcon />
               </span>
-              <p onClick={clearLocalStorage} className={styles.name}>
-                {el}
-              </p>
+              <p className={styles.name}>{el}</p>
             </div>
             <span onClick={() => removeItem(i)} className={styles.close}>
               x

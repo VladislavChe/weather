@@ -6,9 +6,8 @@ const ADD_FAVOURITE_LOCATIONS = "ADD_FAVOURITE_LOCATIONS";
 let initialState = {
   cards: [],
   card: {
-    city: "City",
+    city: "Select a city",
     degrees: 11,
-    street: "Broken Cluds",
     humidity: 94,
     wind: 4,
   },
@@ -54,7 +53,10 @@ export const addFavouriteLocations = (location) => ({
   type: ADD_FAVOURITE_LOCATIONS,
   location,
 });
-export const isLoading = (state) => ({ type: "LOADING", state });
+export const isLoading = (state) => ({
+  type: "LOADING",
+  state,
+});
 
 //Thunk creators
 export const getWeather = (tower) => {
@@ -72,20 +74,16 @@ export const getWeather = (tower) => {
     let card = {
       city: city,
       degrees: degrees,
-      street: "Broken Cluds",
       humidity: humidity,
       wind: wind,
     };
+
+    localStorage.setItem("mainCard", JSON.stringify(card));
     dispatch(choosedTower(card));
     dispatch(isLoading(false));
   };
 };
 export const addToLocalStorage = (towns) => {
-  return (dispatch) => {
-    localStorage.setItem("cities", towns);
-    let localStorageRef = localStorage.getItem(towns);
-    console.log(localStorageRef);
-    // dispatch(addFavouriteLocations());
-  };
+  return (dispatch) => {};
 };
 export default mainBranchReducer;

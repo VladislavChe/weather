@@ -1,5 +1,14 @@
+import React from "react";
 import { connect } from "react-redux";
 import Card from "./Card";
+import { isLoading } from "../../../redux/main-branch-reducer";
+
+const CardContainer = (props) => {
+  let card =
+    JSON.parse(localStorage.getItem("mainCard")) ?? props.mainBranch.card;
+
+  return props.mainBranch.isLoading ? "Loading..." : <Card card={card} />;
+};
 
 let mapStateToProps = (state) => {
   return {
@@ -7,10 +16,4 @@ let mapStateToProps = (state) => {
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-const CardContainer = connect(mapStateToProps, mapDispatchToProps)(Card);
-
-export default CardContainer;
+export default connect(mapStateToProps, { isLoading })(CardContainer);

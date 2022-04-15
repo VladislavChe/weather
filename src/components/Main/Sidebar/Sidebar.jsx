@@ -4,7 +4,7 @@ import SearchContainer from "./Search/SearchContainer";
 import LocationContainer from "./Location/LocationContainer";
 
 const Sidebar = () => {
-  let [value, setValue] = useState("");
+  let [inputValue, setInputValue] = useState("");
   let [items, setItems] = useState(
     JSON.parse(localStorage.getItem("items")) ?? []
   );
@@ -16,16 +16,16 @@ const Sidebar = () => {
     <div className={styles.wrapper}>
       <div className={styles.searchWrapper}>
         <SearchContainer
-          value={value}
-          setValue={setValue}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
           items={items}
           setItems={setItems}
         />
       </div>
       <div className={styles.locationWrapper}>
         <LocationContainer
-          value={value}
-          setValue={setValue}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
           items={items}
           setItems={setItems}
         />

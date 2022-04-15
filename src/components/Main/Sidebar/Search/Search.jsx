@@ -3,7 +3,7 @@ import styles from "./Search.module.css";
 import searchIcon from "../../../../img/search-icon.png";
 
 const Search = (props) => {
-  let [value, setValue] = [props.value, props.setValue];
+  let [inputValue, setInputValue] = [props.inputValue, props.setInputValue];
 
   const searchTown = (town) => {
     props.getWeather(town);
@@ -12,23 +12,23 @@ const Search = (props) => {
     props.addFavouriteLocations(values);
     searchTown(values);
     props.setItems([values, ...props.items]);
-    setValue("");
+    setInputValue("");
   };
   return (
     <form
       className={styles.form}
       onSubmit={(event) => {
         event.preventDefault();
-        addFavouriteLocations(value);
+        addFavouriteLocations(inputValue);
       }}
     >
       <input
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event) => setInputValue(event.target.value)}
         name={"serchInput"}
         placeholder="Search city"
         className={styles.input}
         type="text"
-        value={value}
+        value={inputValue}
       />
       <button>
         <img className={styles.img} src={searchIcon} alt="loop" />

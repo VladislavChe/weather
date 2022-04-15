@@ -13,9 +13,7 @@ const TowersContainer = (props) => {
     props.getWeather(tower);
   };
 
-  return props.mainBranch.isLoading ? (
-    "Loading"
-  ) : (
+  return (
     <Towers
       clickTower={clickTower}
       cards={props.mainBranch.cards}

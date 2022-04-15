@@ -12,8 +12,8 @@ const SearchContainer = (props) => {
     <Search
       addFavouriteLocations={props.addFavouriteLocations}
       getWeather={props.getWeather}
-      value={props.value}
-      setValue={props.setValue}
+      inputValue={props.inputValue}
+      setInputValue={props.setInputValue}
       addToLocalStorage={props.addToLocalStorage}
       items={props.items}
       setItems={props.setItems}

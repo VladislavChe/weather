@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Card.module.css";
 
-const Card = ({ mainBranch: { card } }) => {
+const Card = ({ card }) => {
   return (
     <div className={styles.сard}>
       <h2 className={styles.сity}>{card.city}</h2>

@@ -10,8 +10,8 @@ const LocationContainer = (props) => {
       addFavouriteLocations={props.addFavouriteLocations}
       getWeather={props.getWeather}
       searchText={props.mainBranch.searchText}
-      value={props.value}
-      setValue={props.setValue}
+      inputValue={props.inputValue}
+      setInputValue={props.setInputValue}
       items={props.items}
       setItems={props.setItems}
     />

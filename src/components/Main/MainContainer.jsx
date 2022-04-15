@@ -8,17 +8,10 @@ const MainContainer = (props) => {
   return <Main {...props} />;
 };
 
-// class MainContainer extends React.Component {
-//   componentDidMount() {}
-//
-//   render() {
-//     return <Main {...this.props} />;
-//   }
-// }
-
 let mapStateToProps = (state) => {
   return {
     isAuth: state.auth.isAuth,
+    mainBranch: state.mainBranch,
   };
 };
 
