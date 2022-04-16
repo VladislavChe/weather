@@ -1,60 +1,31 @@
 import { API } from "./../API/api";
-const CHOOSED_TOWER = "CHOOSED-TOWER";
-const NEW_SEARCH_TEXT = "NEW_SEARCH_TEXT";
-const ADD_FAVOURITE_LOCATIONS = "ADD_FAVOURITE_LOCATIONS";
+const LOADING = "LOADING";
 
 let initialState = {
-  cards: [],
   card: {
     city: "Select a city",
     degrees: 11,
     humidity: 94,
     wind: 4,
   },
-  searchText: "",
   isLoading: false,
 };
 
 const mainBranchReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "LOADING":
+    case LOADING:
       return {
         ...state,
         isLoading: action.state,
       };
-    case CHOOSED_TOWER:
-      return {
-        ...state,
-        card: action.card,
-      };
-    case NEW_SEARCH_TEXT:
-      return {
-        ...state,
-        searchText: action.newText,
-      };
-    case ADD_FAVOURITE_LOCATIONS:
-      return {
-        ...state,
-        cards: [...state.cards, action.location],
-        searchText: action.location,
-      };
-
     default:
       return state;
   }
 };
 
 //Action Creators
-export const choosedTower = (card) => ({
-  type: CHOOSED_TOWER,
-  card,
-});
-export const addFavouriteLocations = (location) => ({
-  type: ADD_FAVOURITE_LOCATIONS,
-  location,
-});
 export const isLoading = (state) => ({
-  type: "LOADING",
+  type: LOADING,
   state,
 });
 
@@ -79,11 +50,8 @@ export const getWeather = (tower) => {
     };
 
     localStorage.setItem("mainCard", JSON.stringify(card));
-    dispatch(choosedTower(card));
     dispatch(isLoading(false));
   };
 };
-export const addToLocalStorage = (towns) => {
-  return (dispatch) => {};
-};
+
 export default mainBranchReducer;

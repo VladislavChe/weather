@@ -9,7 +9,6 @@ const Search = (props) => {
     props.getWeather(town);
   };
   const addFavouriteLocations = (values) => {
-    props.addFavouriteLocations(values);
     searchTown(values);
     props.setItems([values, ...props.items]);
     setInputValue("");

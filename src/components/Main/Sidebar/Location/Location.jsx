@@ -6,7 +6,6 @@ const Location = (props) => {
   let [inputValue, setInputValue] = [props.inputValue, props.setInputValue];
 
   const clickAddLocation = () => {
-    props.addFavouriteLocations(inputValue);
     props.getWeather(inputValue);
     props.setItems([...props.items, inputValue]);
     setInputValue("");

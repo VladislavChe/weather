@@ -1,8 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  addToLocalStorage,
-  choosedTower,
   getWeather,
   isLoading,
 } from "../../../../../redux/main-branch-reducer";
@@ -17,7 +15,6 @@ const TowersContainer = (props) => {
     <Towers
       clickTower={clickTower}
       cards={props.mainBranch.cards}
-      addToLocalStorage={props.addToLocalStorage}
       items={props.items}
       setItems={props.setItems}
     />
@@ -31,8 +28,6 @@ let mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  choosedTower,
   isLoading,
   getWeather,
-  addToLocalStorage,
 })(TowersContainer);
