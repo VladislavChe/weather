@@ -9,7 +9,7 @@ const Header = (props) => (
     <div className="container">
       <div className={styles.wrapper}>
         <Logo />
-        <Days />
+        <Days days={["Yesterday", "Today", "Tomorrow", "Week", "Month"]} />
         {props.isAuth ? (
           <div className={styles.login}>
             {props.login}{" "}
