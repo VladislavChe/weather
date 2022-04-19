@@ -1,7 +1,10 @@
 import React from "react";
 import Location from "./Location";
 import { connect } from "react-redux";
-import { getWeather } from "../../../../redux/main-branch-reducer";
+import {
+  getWeather,
+  setInputValue,
+} from "../../../../redux/main-branch-reducer";
 
 const LocationContainer = (props) => {
   return (
@@ -17,8 +20,10 @@ const LocationContainer = (props) => {
 
 let mapStateToProps = (state) => {
   return {
-    mainBranch: state.mainBranch,
+    inputValue: state.mainBranch.inputValue,
   };
 };
 
-export default connect(mapStateToProps, { getWeather })(LocationContainer);
+export default connect(mapStateToProps, { getWeather, setInputValue })(
+  LocationContainer
+);

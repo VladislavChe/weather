@@ -2,15 +2,13 @@ import React from "react";
 import styles from "./Search.module.css";
 import searchIcon from "../../../../img/search-icon.png";
 
-const Search = (props) => {
-  let [inputValue, setInputValue] = [props.inputValue, props.setInputValue];
-
+const Search = ({ getWeather, items, setItems, inputValue, setInputValue }) => {
   const searchTown = (town) => {
-    props.getWeather(town);
+    getWeather(town);
   };
   const addFavouriteLocations = (values) => {
     searchTown(values);
-    props.setItems([values, ...props.items]);
+    setItems([values, ...items]);
     setInputValue("");
   };
   return (

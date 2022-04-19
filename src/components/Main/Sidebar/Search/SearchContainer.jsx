@@ -10,9 +10,8 @@ const SearchContainer = (props) => {
   return (
     <Search
       getWeather={props.getWeather}
-      input={props.setInputValue}
-      inputValue={props.inputValue}
       setInputValue={props.setInputValue}
+      inputValue={props.inputValue}
       items={props.items}
       setItems={props.setItems}
     />
@@ -21,7 +20,7 @@ const SearchContainer = (props) => {
 
 let mapStateToProps = (state) => {
   return {
-    mainBranch: state.mainBranch,
+    inputValue: state.mainBranch.inputValue,
   };
 };
 

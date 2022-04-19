@@ -2,12 +2,16 @@ import React from "react";
 import styles from "./Location.module.css";
 import TowersContainer from "./Towers/TowersContainer";
 
-const Location = (props) => {
-  let [inputValue, setInputValue] = [props.inputValue, props.setInputValue];
-
+const Location = ({
+  getWeather,
+  items,
+  setItems,
+  inputValue,
+  setInputValue,
+}) => {
   const clickAddLocation = () => {
-    props.getWeather(inputValue);
-    props.setItems([...props.items, inputValue]);
+    getWeather(inputValue);
+    setItems([...items, inputValue]);
     setInputValue("");
   };
 
@@ -24,7 +28,7 @@ const Location = (props) => {
           </p>
         </div>
       </div>
-      <TowersContainer items={props.items} setItems={props.setItems} />
+      <TowersContainer items={items} setItems={setItems} />
     </div>
   );
 };
