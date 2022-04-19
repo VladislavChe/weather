@@ -1,5 +1,6 @@
 import { API } from "./../API/api";
 const LOADING = "LOADING";
+const INPUT_VALUE = "INPUT_VALUE";
 
 let initialState = {
   card: {
@@ -8,6 +9,7 @@ let initialState = {
     humidity: 94,
     wind: 4,
   },
+  inputValue: "",
   isLoading: false,
 };
 
@@ -18,6 +20,11 @@ const mainBranchReducer = (state = initialState, action) => {
         ...state,
         isLoading: action.state,
       };
+    case INPUT_VALUE:
+      return {
+        ...state,
+        inputValue: action.value,
+      };
     default:
       return state;
   }
@@ -27,6 +34,12 @@ const mainBranchReducer = (state = initialState, action) => {
 export const isLoading = (state) => ({
   type: LOADING,
   state,
+});
+
+//Action Creators
+export const setInputValue = (value) => ({
+  type: INPUT_VALUE,
+  value,
 });
 
 //Thunk creators
