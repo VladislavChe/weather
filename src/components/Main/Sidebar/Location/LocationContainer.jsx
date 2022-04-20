@@ -12,8 +12,6 @@ const LocationContainer = (props) => {
       getWeather={props.getWeather}
       inputValue={props.inputValue}
       setInputValue={props.setInputValue}
-      items={props.items}
-      setItems={props.setItems}
     />
   );
 };

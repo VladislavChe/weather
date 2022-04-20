@@ -5,12 +5,12 @@ const Towers = (props) => {
   const cards = props.items ?? [];
 
   const clearLocalStorage = () => {
-    props.setItems([]);
+    // props.clearLocalStorage([]);
   };
 
   const removeItem = (index) => {
-    let newCards = cards.filter((card, i) => i !== index);
-    props.setItems([...newCards]);
+    // let newCards = cards.filter((card, i) => i !== index);
+    // props.setItems([...newCards]);
   };
 
   return cards.length > 0 ? (

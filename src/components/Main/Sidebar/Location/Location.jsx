@@ -2,16 +2,9 @@ import React from "react";
 import styles from "./Location.module.css";
 import TowersContainer from "./Towers/TowersContainer";
 
-const Location = ({
-  getWeather,
-  items,
-  setItems,
-  inputValue,
-  setInputValue,
-}) => {
+const Location = ({ getWeather, inputValue, setInputValue }) => {
   const clickAddLocation = () => {
     getWeather(inputValue);
-    setItems([...items, inputValue]);
     setInputValue("");
   };
 
@@ -28,7 +21,7 @@ const Location = ({
           </p>
         </div>
       </div>
-      <TowersContainer items={items} setItems={setItems} />
+      <TowersContainer />
     </div>
   );
 };

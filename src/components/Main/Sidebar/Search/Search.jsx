@@ -2,13 +2,12 @@ import React from "react";
 import styles from "./Search.module.css";
 import searchIcon from "../../../../img/search-icon.png";
 
-const Search = ({ getWeather, items, setItems, inputValue, setInputValue }) => {
+const Search = ({ getWeather, inputValue, setInputValue }) => {
   const searchTown = (town) => {
     getWeather(town);
   };
   const addFavouriteLocations = (values) => {
     searchTown(values);
-    setItems([values, ...items]);
     setInputValue("");
   };
   return (

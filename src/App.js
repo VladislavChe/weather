@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router";
 import MainContainer from "./components/Main/MainContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 
-const App = (props) => {
+const App = () => {
   return (
     <div className="App">
       <HeaderContainer />

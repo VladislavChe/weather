@@ -10,10 +10,8 @@ const SearchContainer = (props) => {
   return (
     <Search
       getWeather={props.getWeather}
-      setInputValue={props.setInputValue}
       inputValue={props.inputValue}
-      items={props.items}
-      setItems={props.setItems}
+      setInputValue={props.setInputValue}
     />
   );
 };

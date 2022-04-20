@@ -8,16 +8,6 @@ const HeaderContainer = (props) => {
   return <Header {...props} />;
 };
 
-// class HeaderContainer extends React.Component {
-//   componentDidMount() {
-//     this.props.getAuthUserData();
-//   }
-//
-//   render() {
-//     return <Header {...this.props} />;
-//   }
-// }
-
 let mapStateToProps = (state) => {
   return {
     isAuth: state.auth.isAuth,
