@@ -3,7 +3,6 @@ import styles from "./Towers.module.css";
 
 const Towers = (props) => {
   const cards = props.items ?? [];
-
   const clearLocalStorage = () => {
     // props.clearLocalStorage([]);
   };

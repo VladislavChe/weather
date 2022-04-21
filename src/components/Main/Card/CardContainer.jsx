@@ -4,8 +4,7 @@ import Card from "./Card";
 import { isLoading } from "../../../redux/main-branch-reducer";
 
 const CardContainer = (props) => {
-  let card =
-    JSON.parse(localStorage.getItem("mainCard")) ?? props.mainBranch.card;
+  let card = props.mainBranch.card;
 
   return props.mainBranch.isLoading ? "Loading..." : <Card card={card} />;
 };

@@ -1,5 +1,4 @@
 import { API } from "./../API/api";
-import { Storage } from "../utils/LocalStorage/localStorage";
 const INPUT_VALUE = "INPUT_VALUE";
 const LOADING = "LOADING";
 const SET_CARD = "SET_CARD";
@@ -28,7 +27,7 @@ const mainBranchReducer = (state = initialState, action) => {
     case ADD_FAVOURITE:
       return {
         ...state,
-        favouriteList: [...state.favouriteList, action.city],
+        favouriteList: action.city,
       };
     case CLEAR_STORAGE:
       return {
@@ -51,10 +50,9 @@ const mainBranchReducer = (state = initialState, action) => {
 };
 
 //Action Creators
-export const setCard = (card, boolean) => ({
+export const setCard = (card) => ({
   type: SET_CARD,
   card,
-  boolean,
 });
 
 export const addFavouriteCity = (city) => ({
@@ -108,19 +106,30 @@ export const getWeather = (tower) => {
         wind: wind,
       };
 
-      dispatch(setCard(card, true));
+      dispatch(setCard(card));
       localStorage.setItem("mainCard", JSON.stringify(card));
 
-      localStorage.setItem("items", JSON.stringify([card.city]));
+      if (JSON.parse(localStorage.getItem("items")) === null) {
+        localStorage.setItem("items", JSON.stringify([]));
+      }
+
+      localStorage.setItem(
+        "items",
+        JSON.stringify([
+          ...JSON.parse(localStorage.getItem("items")),
+          card.city,
+        ])
+      );
+      console.log(JSON.parse(localStorage.getItem("items")));
       dispatch(addFavouriteCity(JSON.parse(localStorage.getItem("items"))));
     } else {
-      let card = {
+      const card = {
         city: "Enter the city correctly",
         degrees: 11,
         humidity: 94,
         wind: 4,
       };
-      dispatch(setCard(card, false));
+      dispatch(setCard(card));
     }
 
     dispatch(isLoading(false));
