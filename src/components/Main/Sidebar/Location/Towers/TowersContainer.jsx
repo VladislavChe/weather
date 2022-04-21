@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
+  addFavouriteCity,
   clearLocalStorage,
   getWeather,
   isLoading,
@@ -16,6 +17,7 @@ const TowersContainer = (props) => {
     <Towers
       clickTower={clickTower}
       clearLocalStorage={props.clearLocalStorage}
+      addFavouriteCity={props.addFavouriteCity}
       items={props.mainBranch.favouriteList}
     />
   );
@@ -31,4 +33,5 @@ export default connect(mapStateToProps, {
   isLoading,
   getWeather,
   clearLocalStorage,
+  addFavouriteCity,
 })(TowersContainer);

@@ -4,12 +4,13 @@ import styles from "./Towers.module.css";
 const Towers = (props) => {
   const cards = props.items ?? [];
   const clearLocalStorage = () => {
-    // props.clearLocalStorage([]);
+    props.clearLocalStorage([]);
   };
 
   const removeItem = (index) => {
-    // let newCards = cards.filter((card, i) => i !== index);
-    // props.setItems([...newCards]);
+    let newCards = cards.filter((card, i) => i !== index);
+    props.addFavouriteCity([...newCards]);
+    localStorage.setItem("items", JSON.stringify([...newCards]));
   };
 
   return cards.length > 0 ? (

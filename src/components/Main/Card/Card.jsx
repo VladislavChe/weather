@@ -2,9 +2,23 @@ import React from "react";
 import styles from "./Card.module.css";
 
 const Card = ({ card }) => {
+  let a = card.city;
+  let arr = a.split(" ");
+
+  if (arr.includes("correctly")) {
+    console.log("da");
+  }
   return (
     <div className={styles.сard}>
-      <h2 className={styles.сity}>{card.city}</h2>
+      <h2
+        className={
+          arr.includes("correctly")
+            ? `${styles.сity} ${styles.сityError}`
+            : styles.сity
+        }
+      >
+        {card.city}
+      </h2>
       <div className={styles.body}>
         <div className={styles.degrees}>
           <span>{card.degrees}</span>°

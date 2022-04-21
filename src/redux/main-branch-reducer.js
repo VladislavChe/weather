@@ -7,7 +7,7 @@ const CLEAR_STORAGE = "ADD_FAVOURITE";
 
 let initialState = {
   card: {
-    city: "Enter a city",
+    city: "Enter the city",
     degrees: 11,
     humidity: 94,
     wind: 4,
@@ -78,10 +78,18 @@ export const clearLocalStorageAC = (storage) => ({
 
 //Thunk creators
 export const clearLocalStorage = (item) => {
+  const card = {
+    city: "Enter the city",
+    degrees: 11,
+    humidity: 94,
+    wind: 4,
+  };
   return (dispatch) => {
+    dispatch(setCard(card));
     dispatch(
       clearLocalStorageAC(localStorage.setItem("items", JSON.stringify(item)))
     );
+    dispatch(addFavouriteCity([]));
   };
 };
 
@@ -112,15 +120,16 @@ export const getWeather = (tower) => {
       if (JSON.parse(localStorage.getItem("items")) === null) {
         localStorage.setItem("items", JSON.stringify([]));
       }
+      if (!JSON.parse(localStorage.getItem("items").includes(card.city))) {
+        localStorage.setItem(
+          "items",
+          JSON.stringify([
+            ...JSON.parse(localStorage.getItem("items")),
+            card.city,
+          ])
+        );
+      }
 
-      localStorage.setItem(
-        "items",
-        JSON.stringify([
-          ...JSON.parse(localStorage.getItem("items")),
-          card.city,
-        ])
-      );
-      console.log(JSON.parse(localStorage.getItem("items")));
       dispatch(addFavouriteCity(JSON.parse(localStorage.getItem("items"))));
     } else {
       const card = {

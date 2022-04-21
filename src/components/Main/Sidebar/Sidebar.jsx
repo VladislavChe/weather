@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Sidebar.module.css";
 import SearchContainer from "./Search/SearchContainer";
 import LocationContainer from "./Location/LocationContainer";
-import { addFavouriteCity } from "../../../redux/main-branch-reducer";
 
 const Sidebar = () => {
   return (

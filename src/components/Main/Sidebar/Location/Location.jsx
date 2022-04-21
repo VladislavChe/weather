@@ -4,8 +4,10 @@ import TowersContainer from "./Towers/TowersContainer";
 
 const Location = ({ getWeather, inputValue, setInputValue }) => {
   const clickAddLocation = () => {
-    getWeather(inputValue);
-    setInputValue("");
+    if (inputValue !== "") {
+      getWeather(inputValue);
+      setInputValue("");
+    }
   };
 
   return (

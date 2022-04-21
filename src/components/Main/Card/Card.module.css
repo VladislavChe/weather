@@ -1,6 +1,4 @@
 .сard {
-  /* outline: 1px solid yellow; */
-
   background: rgba(0, 15, 26, 0.54);
   padding: 30px 40px 38px 50px;
   border-radius: 20px;
@@ -11,6 +9,9 @@
   font-weight: bold;
   text-transform: none;
   font-size: 45px;
+}
+.сity.сityError {
+  color: #e17777;
 }
 
 .body {

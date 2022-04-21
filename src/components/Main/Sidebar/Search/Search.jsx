@@ -5,9 +5,6 @@ import searchIcon from "../../../../img/search-icon.png";
 const Search = ({ getWeather, inputValue, setInputValue }) => {
   const searchTown = (town) => {
     getWeather(town);
-  };
-  const addFavouriteLocations = (values) => {
-    searchTown(values);
     setInputValue("");
   };
   return (
@@ -15,7 +12,7 @@ const Search = ({ getWeather, inputValue, setInputValue }) => {
       className={styles.form}
       onSubmit={(event) => {
         event.preventDefault();
-        addFavouriteLocations(inputValue);
+        searchTown(inputValue);
       }}
     >
       <input
