@@ -9,8 +9,8 @@ import {
 import Towers from "./Towers";
 
 const TowersContainer = (props) => {
-  const clickTower = (tower) => {
-    props.getWeather(tower);
+  const clickTower = (tower, index) => {
+    props.getWeather(tower, index);
   };
 
   return (

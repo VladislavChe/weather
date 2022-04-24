@@ -7,6 +7,11 @@ const Days = (props) => {
 
   const onSelectItem = (index) => {
     setActiveItem(index);
+    if (JSON.parse(localStorage.getItem("mainCard")) !== null) {
+      const mainCity = JSON.parse(localStorage.getItem("mainCard"));
+
+      props.getWeather(mainCity.city, index);
+    }
   };
   return (
     <ul className={styles.days}>

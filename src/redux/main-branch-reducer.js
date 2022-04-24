@@ -93,19 +93,19 @@ export const clearLocalStorage = (item) => {
   };
 };
 
-export const getWeather = (tower) => {
+export const getWeather = (tower, day) => {
   return async (dispatch) => {
     dispatch(isLoading(true));
-    const data = await API.getCityName(tower);
+    const data = await API.getLatLonByCityName(tower);
     if (data.length > 0) {
       let lat = data[0].lat;
       let lon = data[0].lon;
 
-      const result = await API.getCurrentCity(lat, lon);
-      let city = result.name;
-      let degrees = Math.round(result.main.temp - 273.15);
-      let humidity = result.main.humidity;
-      let wind = Math.round(result.wind.speed);
+      const result = await API.getTodayWeather(lat, lon);
+      let city = tower;
+      let degrees = Math.round(result.daily[day].temp.day - 273.15);
+      let humidity = result.daily[day].humidity;
+      let wind = result.daily[day].wind_speed;
 
       let card = {
         city: city,

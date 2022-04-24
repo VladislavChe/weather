@@ -4,7 +4,7 @@ import searchIcon from "../../../../img/search-icon.png";
 
 const Search = ({ getWeather, inputValue, setInputValue }) => {
   const searchTown = (town) => {
-    getWeather(town);
+    getWeather(town, 0);
     setInputValue("");
   };
   return (

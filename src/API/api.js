@@ -17,17 +17,17 @@ const instanceSocial = axios.create({
 });
 
 export const API = {
-  getCityName(city) {
+  getLatLonByCityName(city) {
     return instance
       .get(
         `geo/1.0/direct?q=${city}&limit=5&appid=5829ae54ffac0afcef6420da9ac6f2db`
       )
       .then((response) => response.data);
   },
-  getCurrentCity(lat, lon) {
+  getTodayWeather(lat, lon) {
     return instance
       .get(
-        `data/2.5/weather?lat=${lat}&lon=${lon}&appid=5829ae54ffac0afcef6420da9ac6f2db`
+        `data/2.5/onecall?lat=${lat}&lon=${lon}&appid=5829ae54ffac0afcef6420da9ac6f2db`
       )
       .then((response) => response.data);
   },

@@ -20,7 +20,7 @@ const Towers = (props) => {
       </span>
       {cards.map((el, i) => {
         const handler = () => {
-          props.clickTower(el);
+          props.clickTower(el, 0);
         };
         return (
           <li key={i}>
