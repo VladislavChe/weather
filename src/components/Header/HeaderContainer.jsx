@@ -4,7 +4,7 @@ import Header from "./Header";
 import { getAuthUserData, logout } from "../../redux/auth-redicer";
 
 const HeaderContainer = (props) => {
-  props.getAuthUserData();
+  // props.getAuthUserData();
   return <Header {...props} />;
 };
 

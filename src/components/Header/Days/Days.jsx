@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Days.module.css";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 const Days = (props) => {
   const [activeItem, setActiveItem] = useState(null);
@@ -22,7 +22,7 @@ const Days = (props) => {
             className={activeItem === index ? styles.active : ""}
             key={`${day} ${index}`}
           >
-            <NavLink to="/">{day}</NavLink>
+            <span>{day}</span>
           </li>
         );
       })}

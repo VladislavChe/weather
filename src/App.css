@@ -110,7 +110,7 @@ li {
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 0 15px;
 }
 
 .App-logo {
@@ -149,9 +149,9 @@ li {
 }
 
 .main {
-  height: 500px;
   background: rgb(1, 53, 110);
   background: url(./img/home.jpg) no-repeat top center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 

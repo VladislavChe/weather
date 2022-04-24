@@ -1,5 +1,5 @@
 .header {
-  padding: 20px 0;
+  padding: 15px 0;
   background: rgb(50, 50, 50);
 }
 .wrapper {
@@ -59,3 +59,9 @@
   height: 100%;
 }
 
+/* 576px - 768px */
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}

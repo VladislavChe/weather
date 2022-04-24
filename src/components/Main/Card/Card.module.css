@@ -18,6 +18,7 @@
 .body {
   display: flex;
   justify-content: center;
+  margin-top: 15px;
 }
 
 .degrees {
@@ -33,20 +34,56 @@
 .info {
   text-align: left;
   width: 70%;
-}
-
-.street {
-  font-size: 45px;
+  font-size: 36px;
 }
 
 .wet {
-  font-size: 36px;
+
 }
 
 .wind {
-  font-size: 25px;
+
 }
 
-.pressure {
-  font-size: 36px;
+/* 768px - 992px */
+@media screen and (max-width: 991px) {
+  .сard {
+    padding: 15px 25px;
+  }
+  .сity {
+    font-size: 35px;
+  }
+  .info {
+    font-size: 26px;
+  }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+  .body {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .сity {
+    text-align: center;
+    font-size: 30px;
+  }
+  .degrees {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 56px;
+  }
+  .info {
+    width: 100%;
+    font-size: 20px;
+  }
+  .wet {
+    display: flex;
+    justify-content: center;
+  }
+  .wind {
+    display: flex;
+    justify-content: center;
+  }
 }

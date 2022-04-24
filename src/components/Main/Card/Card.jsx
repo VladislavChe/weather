@@ -26,7 +26,7 @@ const Card = ({ card }) => {
         <div className={styles.info}>
           <div className={styles.wet}>humidity: {card.humidity}%</div>
           <div className={styles.wind}>wind: {card.wind} m/s</div>
-          <div className={styles.pressure}>H 16 • L 11 </div>
+          {/*<div className={styles.pressure}>H 16 • L 11 </div>*/}
         </div>
       </div>
     </div>

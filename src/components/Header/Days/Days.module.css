@@ -3,18 +3,22 @@
 }
 
 .days li {
-  margin-right: 10px;
+  /*margin-right: 15px;*/
 }
 
-.days li a {
+.days li:last-child {
+  margin-right: 0px;
+}
+
+.days li span {
   display: inline-block;
   position: relative;
   z-index: 0;
   padding: 5px 10px;
 }
 
-.days li a::before,
-.days li a::after {
+.days li span::before,
+.days li span::after {
   content: '';
   position: absolute;
   top: 0;
@@ -25,12 +29,12 @@
   transition: all 0.5s ease-out;
 }
 
-.days li a::before {
+.days li span::before {
   border-top: 1px solid var(--main-color);
   border-bottom: 1px solid var(--main-color);
 }
 
-.days li a::after {
+.days li span::after {
   top: 50%;
   left: 0;
   width: 100%;
@@ -38,21 +42,56 @@
   border-left: 1px solid var(--main-color);
   border-right: 1px solid var(--main-color);
   transform: translate(0, -50%);
-  transition: all 0.25s ease-out;
+  transition: all 0.5s ease-out;
 }
 
-.days li a:hover {
+.days li span:hover {
   color: var(--main-color);
+  transition: all 0.5s ease-out;
 }
 
-.days li a:hover:before {
+.days li span:hover:before {
   width: 100%;
 }
 
-.days li a:hover:after {
+.days li span:hover:after {
   height: 100%;
 }
 
 .active {
   color: var(--main-color);
+}
+
+/*Responsive*/
+/* 992px - 1200px */
+@media screen and (max-width: 1199px) {
+}
+
+/* 768px - 992px */
+@media screen and (max-width: 991px) {
+  .days li span {
+    font-size: 14px;
+  }
+
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 767px) {
+  .days {
+    margin-top: 15px;
+  }
+  .days li span {
+    font-size: 16px;
+  }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+  .days {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .days li span {
+    font-size: 13px;
+  }
 }

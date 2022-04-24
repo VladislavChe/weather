@@ -6,7 +6,7 @@
   background: var(--main-color);
   display: flex;
   align-items: center;
-  padding: 25px 30px 29px;
+  padding: 30px;
   transition: var(--transition);
   cursor: pointer;
   /*border-bottom: 8px solid #f3f3f3;*/
@@ -46,9 +46,6 @@
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* display: block; */
-  /* margin-top: -1px;
-  margin-left: -1px; */
   line-height: 100%;
   transition: var(--transition);
 }
@@ -64,4 +61,30 @@
 
 .text {
   font-size: 19px;
+}
+
+/*Responsive*/
+/* 992px - 1200px */
+@media screen and (max-width: 1199px) {
+}
+
+/* 768px - 992px */
+@media screen and (max-width: 991px) {
+  .add {
+    padding: 15px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .text {
+    font-size: 14px;
+  }
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 767px) {
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
 }
