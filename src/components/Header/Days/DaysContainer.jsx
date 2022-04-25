@@ -5,8 +5,23 @@ import { getWeather } from "../../../redux/main-branch-reducer";
 
 const DaysContainer = (props) => {
   let date = new Date();
+  console.log(date.getDay());
   function getWeekDay(date) {
     let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
       "Sunday",
       "Monday",
       "Tuesday",

@@ -2,7 +2,7 @@ import * as axios from "axios";
 
 const instance = axios.create({
   // withCredentials: true,
-  baseURL: "http://api.openweathermap.org/",
+  baseURL: "https://api.openweathermap.org/",
   // headers: {
   //   'API-KEY': '5829ae54ffac0afcef6420da9ac6f2db',
   // },
