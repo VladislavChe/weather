@@ -102,6 +102,7 @@ export const getWeather = (tower, day) => {
       let lon = data[0].lon;
 
       const result = await API.getTodayWeather(lat, lon);
+      console.log(result);
       let city = tower;
       let degrees = Math.round(result.daily[day].temp.day - 273.15);
       let humidity = result.daily[day].humidity;

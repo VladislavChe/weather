@@ -58,8 +58,8 @@
   }
 }
 
-/* 320px - 576px */
-@media screen and (max-width: 576px) {
+/* 576px - 768px */
+@media screen and (max-width: 767px) {
   .body {
     flex-direction: column;
     margin-top: 0;
@@ -86,4 +86,10 @@
     display: flex;
     justify-content: center;
   }
+}
+
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+
+
 }
