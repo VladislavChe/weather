@@ -14,7 +14,7 @@ const Location = ({ getWeather, inputValue, setInputValue }) => {
     <div className={styles.location}>
       <div onClick={clickAddLocation} className={styles.add}>
         <div className={styles.plus}>
-          <span>+</span>
+          <span></span>
         </div>
         <div className={styles.titleWrapper}>
           <div className={styles.title}>Add Location</div>
