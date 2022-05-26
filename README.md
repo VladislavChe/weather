@@ -1,4 +1,4 @@
-app link: https://weather-app.vladislav-che.ru/
+App link: https://weather-app.vladislav-che.ru/
 
 In this project I used:  
 React  
@@ -7,4 +7,5 @@ React hooks
 React-redux  
 Rest API  
 Axios  
-redux-thunk
+Redux-thunk  
+LocalStorage
